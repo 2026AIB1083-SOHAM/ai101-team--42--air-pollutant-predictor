@@ -1,5 +1,5 @@
-# ai101-team--42--air-pollutant-predictor
-Predicts air pollutant concentration (e.g., PM2.5 / AQI) using meteorological and sensor data via regression models (pandas, scikit-learn, matplotlib)
+# Team-42-Air-Pollutant-Predictor
+Predicts air pollutant concentrations (e.g., CO / Benzene) from multi-sensor and meteorological data using linear regression (numpy,pandas, scikit-learn, matplotlib).
 ### Team and roles
 
 | Member | Entry no. | Role |
@@ -10,3 +10,5 @@ Predicts air pollutant concentration (e.g., PM2.5 / AQI) using meteorological an
 | Nihal Krishna Chetterbhaktula | 2026DAB1299 | Video lead |
 
 *All four members contributed code (see commit history).*
+
+## Project structure
