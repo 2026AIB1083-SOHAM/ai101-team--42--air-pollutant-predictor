@@ -27,3 +27,34 @@ ai101-team-number-air-pollutant-predictor/
 ├── .gitignore                   
 ├── requirements.txt             # Pinned package dependencies
 └── README.md                    # Documentation & reproducibility instructions
+---
+
+### Setup
+
+Tested on Python 3.10, 3.11, and 3.14 (Windows, macOS, Ubuntu).
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/](https://github.com/)<your-username>/ai101-team-number-air-pollutant-predictor.git
+cd ai101-team-number-air-pollutant-predictor
+
+# 2. Create and activate a virtual environment
+python -m venv venv
+
+# On Windows (Command Prompt / PowerShell):
+venv\Scripts\activate
+
+# On macOS/Linux:
+source venv/bin/activate
+
+# 3. Install required dependencies
+pip install -r requirements.txt
+
+### How to run
+
+1. Run the complete pipeline from the project root directory:
+   ```bash
+   python src/main.py
+   ```
+2. The script automatically executes data ingestion and cleaning, IQR outlier detection, linear regression model training, metric evaluation (MAE, MSE, RMSE, R²), and exports 7 plots into `outputs/`.
+3. Expected runtime: under 35 seconds.
