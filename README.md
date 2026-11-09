@@ -27,7 +27,6 @@ ai101-team-number-air-pollutant-predictor/
 ├── .gitignore                   
 ├── requirements.txt             # Pinned package dependencies
 └── README.md                    # Documentation & reproducibility instructions
----
 
 ### Setup
 
