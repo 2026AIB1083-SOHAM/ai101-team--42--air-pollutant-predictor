@@ -71,7 +71,7 @@ def run_eda_and_visualize(df, X, y, target_col):
     return correlations
 
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     from cleaning import load_and_clean_data
     df, X, y, target_col = load_and_clean_data()
     run_eda_and_visualize(df, X, y, target_col)
