@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-sys.path.append(os.path.dirname(os.path.abspath(_file_)))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 def run_eda_and_visualize(df, X, y, target_col):
     os.makedirs("outputs", exist_ok=True)
