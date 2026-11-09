@@ -27,37 +27,38 @@ ai101-team-number-air-pollutant-predictor/
 ├── .gitignore                   
 ├── requirements.txt             # Pinned package dependencies
 └── README.md                    # Documentation & reproducibility instructions
-
+```
 ### Setup
 
 Tested on Python 3.10, 3.11, and 3.14 (Windows, macOS, Ubuntu).
 
-# 1. Clone the repository
+#### 1. Clone the repository
 
 ```bash
 git clone https://github.com/<your-username>/ai101-team-number-air-pollutant-predictor.git
-cd ai101-team-number-air-pollutant-predictor
+cd ai101-team-number-air-pollutant-predicto
 ```
 
-# 2. Create and activate a virtual environment
+
+#### 2. Create and activate a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-# On Windows (Command Prompt / PowerShell):
+##### On Windows (Command Prompt / PowerShell):
 
 ```bash
 venv\Scripts\activate
 ```
 
-# On macOS/Linux:
+###### On macOS/Linux:
 
 ```bash
 source venv/bin/activate
 ```
 
-# 3. Install required dependencies
+#### 3. Install required dependencies
 
 ```bash
 pip install -r requirements.txt
