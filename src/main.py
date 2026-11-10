@@ -1,7 +1,8 @@
 import os
 import sys
 
-# Ensure Python locates all component modules inside src/
+# Add the source directory to Python's module search path
+# so the individual project components can be imported.
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from cleaning import load_and_clean_data
@@ -16,10 +17,12 @@ def main():
     print("   AIR POLLUTANT PREDICTION PIPELINE (AI101)        ")
     print("====================================================")
 
-    # Step 1: Data Cleaning (pandas, numpy)
+    # Step 1: Load the air-quality dataset, handle missing
+    # observations and prepare the predictor and target variables.
     df, X, y, target_col = load_and_clean_data("data/air_quality.csv", "CO(GT)")
 
-    # Step 2: Outlier Detection, Correlation & Visualization (numpy, pandas, matplotlib)
+    # Step 2: Explore the cleaned dataset through IQR-based
+    # outlier detection, correlation analysis and visualizations.
     correlations = run_eda_and_visualize(df, X, y, target_col)
 
     # Step 3: Regression Model Training (scikit-learn, numpy, pandas, matplotlib)
