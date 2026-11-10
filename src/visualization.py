@@ -9,7 +9,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 def run_eda_and_visualize(df, X, y, target_col):
     os.makedirs("outputs", exist_ok=True)
 
-    # 1. Lecture Note Implementation: Box Plot & 1.5 * IQR Outlier Rule
+   # Apply the IQR method to identify unusually high or low
+   # CO readings using the standard 1.5 times IQR boundaries.
     s = df[target_col].dropna()
     q1, q3 = s.quantile([0.25, 0.75])
     iqr = q3 - q1
@@ -35,14 +36,16 @@ def run_eda_and_visualize(df, X, y, target_col):
     plt.savefig(os.path.join("outputs", "1_boxplot_outliers.png"))
     plt.close()
 
-    # 2. Lecture Note Implementation: 2x2 NumPy Correlation Matrix (Cell [0, 1])
+    # Calculate Pearson correlation between each predictor
+    # and the target variable to examine their linear relationships.
     print("\n--- [EDA] 2x2 NumPy Correlation Matrix (np.corrcoef) ---")
     correlations = {}
     for col in X.columns:
         corr_matrix = np.corrcoef(X[col], y)
         correlations[col] = corr_matrix[0, 1]
         print(f"Correlation ({col:12s} vs {target_col}): {correlations[col]:+.4f}")
-
+    # Visualize the distribution of CO readings and use mean
+    # and median reference lines to understand the data's spread.
     # Graph 2: Target Concentration Distribution Histogram
     plt.figure(figsize=(7, 5))
     plt.hist(y, bins=30, color="skyblue", edgecolor="black")
@@ -55,8 +58,7 @@ def run_eda_and_visualize(df, X, y, target_col):
     plt.tight_layout()
     plt.savefig(os.path.join("outputs", "2_target_histogram.png"))
     plt.close()
-
-    # Graph 3: Feature Correlation Bar Chart
+    # Visualize the distribution of CO readings and use mean
     corr_series = pd.Series(correlations).sort_values()
     plt.figure(figsize=(8, 5))
     plt.barh(corr_series.index, corr_series.values, color="teal", edgecolor="black")
