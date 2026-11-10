@@ -11,12 +11,14 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 def train_regression_model(X, y, target_col):
     os.makedirs("outputs", exist_ok=True)
 
-    # Step 1: Split 80% Training / 20% Testing (Exact Lecture Slide Code)
+    # Divide the available observations into training and testing
+    # subsets, keeping 20% aside for evaluating unseen data.
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
 
-    # Step 2: Fit Parametric Linear Regression Model (y = b0 + b1*x1 + b2*x2 + ...)
+    # Train the multiple linear regression model to learn the
+    # intercept and coefficients associated with each input feature.
     model = LinearRegression().fit(X_train, y_train)
 
     b0 = model.intercept_
