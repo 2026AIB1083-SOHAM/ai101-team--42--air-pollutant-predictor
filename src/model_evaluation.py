@@ -10,11 +10,13 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 def evaluate_regression_model(model, X_train, X_test, y_train, y_test, target_col):
     os.makedirs("outputs", exist_ok=True)
 
-    # Step 3: Predict on Test and Training sets
+    # Generate predictions for both datasets to examine how
+    # the trained model performs on familiar and unseen observations.
     y_pred = model.predict(X_test)
     y_train_pred = model.predict(X_train)
 
-    # Build Residual Table using Pandas & NumPy (e_i = y_i - y_hat_i)
+    # Calculate residuals as the difference between actual and
+    # predicted CO values and organize the errors for inspection.
     residuals = y_test.values - y_pred
     eval_table = pd.DataFrame({
         "Actual Observed (Ai)": np.round(y_test.values[:10], 3),
@@ -27,7 +29,8 @@ def evaluate_regression_model(model, X_train, X_test, y_train, y_test, target_co
     print("\n--- [Model Evaluation] Residual Table (First 10 Test Samples) ---")
     print(eval_table.to_string(index=False))
 
-    # Step 4: Calculate MAE, MSE, RMSE, and R² (Exact Lecture Slide Implementation)
+    # Evaluate prediction accuracy using MAE, MSE, RMSE and R-squared.
+    # These metrics describe different aspects of regression performance.
     mae = mean_absolute_error(y_test, y_pred)
     mse = mean_squared_error(y_test, y_pred)
     rmse = np.sqrt(mse)
