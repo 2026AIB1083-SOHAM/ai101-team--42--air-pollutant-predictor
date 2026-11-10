@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 
 def load_and_clean_data(filepath="data/air_quality.csv", target_col="CO(GT)"):
-    # Ensure filepath works whether run from project root or inside src/
+   # Resolve the dataset location so the file can be accessed
+   # correctly from different working directories.
     if not os.path.exists(filepath):
         alt_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), filepath)
         if os.path.exists(alt_path):
@@ -11,7 +12,8 @@ def load_and_clean_data(filepath="data/air_quality.csv", target_col="CO(GT)"):
         else:
             raise FileNotFoundError(f"Dataset not found at {filepath}. Place air_quality.csv inside data/")
 
-    # Detect UCI semicolon delimiter (;) vs standard comma (,)
+    # Identify the CSV separator from the first line because
+    # the original UCI dataset uses semicolons instead of commas.
     with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
         first_line = f.readline()
     sep = ";" if ";" in first_line else ","
@@ -24,7 +26,8 @@ def load_and_clean_data(filepath="data/air_quality.csv", target_col="CO(GT)"):
     df = df.dropna(how="all")
     print(f"[Cleaning] Raw dataset shape: {df.shape}")
 
-    # Replace UCI missing value sentinel code (-200) with NaN using NumPy
+    # Convert the dataset's -200 missing-value marker into NaN
+    # so pandas can handle missing sensor observations consistently.
     df = df.replace(-200, np.nan).replace(-200.0, np.nan)
 
     # Keep numeric columns and drop rows with missing values
