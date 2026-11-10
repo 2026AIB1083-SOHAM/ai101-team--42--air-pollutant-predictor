@@ -1,7 +1,7 @@
 # Air Pollutant Predictor using Linear Regression
 
 An educational machine-learning project that predicts air pollutant concentrations (e.g., CO / Benzene) from multi-sensor and meteorological data using linear regression (numpy,pandas, scikit-learn, matplotlib).
->**Important:** This is an academic demonstration, not an official >predictor tool or decision support tool
+>**Important:** This is an academic demonstration, not an official predictor tool or decision support tool
 ### Team and roles
 
 | Member |IIT ROPAR Entry no. | Role |
@@ -19,7 +19,7 @@ An educational machine-learning project that predicts air pollutant concentratio
 
 The project uses the UCI air quality dataset to identify trends and develop a Linear regression model to predict CO(GT). 
 
-The model uses 7 input features.
+## left to add a who did what part of code
 
 ## Dataset 
 
@@ -133,6 +133,7 @@ The test confusion matrix for binary classification (0 = Safe, 1 = Polluted) is
 ```text
 [[782  126]
  [145  740]]
+```
 
 ## Presentation and Video
 
