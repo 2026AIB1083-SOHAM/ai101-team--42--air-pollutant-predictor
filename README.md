@@ -2,14 +2,16 @@
 
 An educational machine-learning project that predicts air pollutant concentrations (e.g., CO / Benzene) from multi-sensor and meteorological data using linear regression (numpy,pandas, scikit-learn, matplotlib).
 >**Important:** This is an academic demonstration, not an official predictor tool or decision support tool
-### Team and roles
 
-| Member |IIT ROPAR Entry no. | Role |
-| :--- | :--- | :--- |
-| Soham Gupta | 2026AIB1083 | Documentation lead |
-| Amarpreet Singh | 2026EEB1318 | Execution lead |
-| Kedare Ashish Rajendra | 2026MCB1535 | PPT lead |
-| Nihal Krishna Chetterbhaktula | 2026DAB1299 | Video lead |
+## Team and roles
+
+| Member | IIT ROPAR Entry no. | Role | GitHub Handle |
+| :--- | :--- | :--- | :--- |
+| Soham Gupta | 2026AIB1083 | Documentation lead | [@2026AIB1083-SOHAM](https://github.com/2026AIB1083-SOHAM) / [@sohamg9072](https://github.com/sohamg9072) |
+| Amarpreet Singh | 2026EEB1318 | Execution lead | [@Amarpreet2026](https://github.com/Amarpreet2026) |
+| Kedare Ashish Rajendra | 2026MCB1535 | PPT lead | [@2026mcb1535-star](https://github.com/2026mcb1535-star) |
+| Nihal Krishna Chetterbhaktula | 2026DAB1299 | Video lead | [@2026dab1299-ui](https://github.com/2026dab1299-ui) |
+
 
 *All four members contributed code (see commit history).*
 **GitHub repository:**
@@ -19,19 +21,37 @@ An educational machine-learning project that predicts air pollutant concentratio
 
 The project uses the UCI air quality dataset to identify trends and develop a Linear regression model to predict CO(GT). 
 
-## left to add a who did what part of code
+## Project Overview
 
-## Dataset 
+The project uses the UCI Air Quality dataset to build a **Multiple Linear Regression** model. The target column is `CO(GT)` (ground-truth Carbon Monoxide concentration in mg/m³).
 
-The supplied CSV file is 'air_quality.csv' 
-*See the data folder* 
-- **Rows:** 9,357 hourly records
-- **Columns:** 15
-- **Target:** Pollutant concentration
-- **Missing values:** We removed empty columns and replaced the dataset's −200 "missing" code with blanks.
+The model uses all numeric sensor responses and ambient weather measurements as input features:
 
-Do not rename files unless you also
-update the path in the commands accordingly.
+* `PT08.S1(CO)`
+* `NMHC(GT)`
+* `C6H6(GT)`
+* `PT08.S2(NMHC)`
+* `NOx(GT)`
+* `PT08.S3(NOx)`
+* `NO2(GT)`
+* `PT08.S4(NO2)`
+* `PT08.S5(O3)`
+* `T` (Temperature)
+* `RH` (Relative Humidity)
+* `AH` (Absolute Humidity)
+
+The model fits the parametric equation $y = b_0 + b_1 x_1 + b_2 x_2 + \dots + b_{12} x_{12}$ and outputs a continuous predicted pollutant concentration ($\hat{y} \in \mathbb{R}$).
+
+## Dataset
+
+The supplied CSV file is `air_quality.csv` located in the `data/` directory.
+
+* **Rows:** 9,357 hourly sensor records (8,991 retained after removing missing records)
+* **Columns:** 15 raw attributes (12 numeric input features + 1 continuous target)
+* **Target:** `CO(GT)`
+* **Missing values:** Handled by replacing the UCI sensor fault sentinel code (`-200`) with `NaN` and dropping invalid entries.
+
+The codebase expects `air_quality.csv` to be in the `data/` directory. Do not alter the directory structure or file names.
 
 ## Project structure
 
@@ -124,6 +144,15 @@ The test confusion matrix for binary classification (0 = Safe, 1 = Polluted) is
 [[782  126]
  [145  740]]
 ```
+### Model Fitting & Residual Diagnostics
+
+![Best Fit Line & Vertical Residuals](outputs/4_best_fit_and_vertical_residuals.png)
+
+#### Interpretation of the Plot
+* **Parametric Best Fit Line ($y = b_0 + b_1 x$):** The green line represents the Ordinary Least Squares (OLS) fitted regression model between the primary predictor Benzene concentration (`C6H6(GT)`) and the target Carbon Monoxide concentration (`CO(GT)`).
+* **Observed vs. Predicted:** The blue markers represent the actual observed sensor values ($y_i$), while the hollow green circles on the regression line indicate the model's fitted predictions ($\hat{y}_i$).
+* **Vertical Residual Errors ($e_i = y_i - \hat{y}_i$):** The red dashed vertical lines illustrate individual prediction residuals (errors). Points located above the green line show positive residuals (underestimation), while points below show negative residuals (overestimation). 
+* **Model Fit:** The tight clustering of data points along the linear trajectory demonstrates a strong positive linear correlation ($r$), confirming that sensor response to Benzene provides a reliable linear indicator for Carbon Monoxide concentration.
 
 ## Presentation and Video
 
