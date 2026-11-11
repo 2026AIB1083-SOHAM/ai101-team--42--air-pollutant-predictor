@@ -13,7 +13,7 @@ An educational machine-learning project that predicts air pollutant concentratio
 
 *All four members contributed code (see commit history).*
 **GitHub repository:**
-<put the updated>
+<https://github.com/2026AIB1083-SOHAM/ai101-team--42--air-pollutant-predictor.git>
 
 ## Project Overview
 
@@ -36,7 +36,7 @@ update the path in the commands accordingly.
 ## Project structure
 
 ```text
-ai101-team-number-air-pollutant-predictor/
+ai101-team-42-air-pollutant-predictor/
 ├── data/
 │   └── air_quality.csv          # 9,357 rows, UCI multi-sensor & meteorological data
 ├── outputs/                     # 7 generated evaluation plots saved here
@@ -58,15 +58,8 @@ Tested on Python 3.10, 3.11, and 3.14 (Windows, Ubuntu).
 "Please run the code one line at a time"
 
 ```bash
-git clone https://github.com/<your-username>/ai101-team-number-air-pollutant-predictor.git
+git clone https://github.com/2026AIB1083-SOHAM/ai101-team--42--air-pollutant-predictor.git
 cd ai101-team-number-air-pollutant-predicto
-```
-
-
-#### 2. Create and activate a virtual environment
-
-```bash
-python -m venv venv
 ```
 
 ### 2. Create and activate a virtual environment
@@ -92,8 +85,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-#### 3. Install required dependencies
-
 ### 3. Install dependencies
 
 ``` bash
@@ -113,7 +104,6 @@ python3 -m pip install -r requirements.txt
 
 3. Expected runtime: under 35 seconds.
 
-## Model Results also include screen shot here
 ## Model Results
 
 The model was executed with the supplied dataset (`data/air_quality.csv`) and the dependency versions listed in `requirements.txt`[cite: 3, 5]. With an 80/20 train/test split (random seed `42`) and median binarization threshold, the testing results were[cite: 4, 5]:
