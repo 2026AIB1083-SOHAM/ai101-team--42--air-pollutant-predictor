@@ -79,7 +79,7 @@ Tested on Python 3.10, 3.11, and 3.14 (Windows, Ubuntu).
 
 ```bash
 git clone https://github.com/2026AIB1083-SOHAM/ai101-team--42--air-pollutant-predictor.git
-cd ai101-team-number-air-pollutant-predicto
+cd ai101-team--42--air-pollutant-predictor
 ```
 
 ### 2. Create and activate a virtual environment
