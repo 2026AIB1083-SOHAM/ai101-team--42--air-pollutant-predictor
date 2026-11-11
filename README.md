@@ -152,7 +152,7 @@ The test confusion matrix for binary classification (0 = Safe, 1 = Polluted) is
 
 ## Presentation and Video
 
-- **Project presentation (PPT):** `[shareable PPT link here]`
+- **Project Presentation (PPT):** [Click Here to View PPT](https://drive.google.com/file/d/1nAkrtIHxCBxYiw0xB-9NpIdtlfVoJB6w/view?usp=sharing)
 - **Project video (maximum 6 minutes):**
   `[shareable video link here]`
 
