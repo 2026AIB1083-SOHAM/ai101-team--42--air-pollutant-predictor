@@ -19,10 +19,6 @@ An educational machine-learning project that predicts air pollutant concentratio
 
 ## Project Overview
 
-The project uses the UCI air quality dataset to identify trends and develop a Linear regression model to predict CO(GT). 
-
-## Project Overview
-
 The project uses the UCI Air Quality dataset to build a **Multiple Linear Regression** model. The target column is `CO(GT)` (ground-truth Carbon Monoxide concentration in mg/m³).
 
 The model uses all numeric sensor responses and ambient weather measurements as input features:
