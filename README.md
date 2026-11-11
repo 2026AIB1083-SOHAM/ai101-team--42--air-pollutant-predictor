@@ -126,20 +126,11 @@ The model was executed with the supplied dataset (`data/air_quality.csv`) and th
 
 | Metric | Test result |
 | :--- | ---: |
-| MAE | 0.384 |
-| RMSE | 0.530 |
-| R² | 0.885 |
-| Accuracy | 0.852 |
-| Precision | 0.861 |
-| Recall | 0.840 |
-| F1 score | 0.850 |
+| MAE | 0.1779 |
+| MSE | 0.0579 |
+| RMSE | 0.2407 |
+| R² | 0.9722 |
 
-The test confusion matrix for binary classification (0 = Safe, 1 = Polluted) is
-
-```text
-[[782  126]
- [145  740]]
-```
 ### Model Fitting & Residual Diagnostics
 
 ![Best Fit Line & Vertical Residuals](outputs/4_best_fit_and_vertical_residuals.png)
