@@ -131,9 +131,47 @@ The model was executed with the supplied dataset (`data/air_quality.csv`) and th
 | RMSE | 0.2407 |
 | R² | 0.9722 |
 
-### Model Fitting & Residual Diagnostics
+## Visualizations & Model Diagnostics
 
-![Best Fit Line & Vertical Residuals](outputs/4_best_fit_and_vertical_residuals.png)
+### 1. Box Plot & Outlier Detection
+![Box Plot](outputs/1_boxplot_outliers.png)
+*Identifies extreme target observations using the $1.5 \times \text{IQR}$ rule and illustrates distribution spread.*
+
+---
+
+### 2. Target Concentration Distribution
+![Target Distribution](outputs/2_target_histogram.png)
+*Visualizes target variable frequency, skewness, and the positioning of the dataset mean versus median.*
+
+---
+
+### 3. Feature Correlations with Target
+![Correlation Bar Chart](outputs/3_correlation_bar_chart.png)
+*Ranks predictors by their Pearson correlation coefficient ($r$) to identify the strongest linear relationships with the target.*
+
+---
+
+### 4. Best Fit Line & Vertical Residuals
+![Best Fit & Residuals](outputs/4_best_fit_and_vertical_residuals.png)
+*Shows the 2D parametric regression line against observed data points, highlighting individual vertical residual errors ($e_i = y_i - \hat{y}_i$).*
+
+---
+
+### 5. Actual vs. Predicted Evaluation
+![Actual vs Predicted](outputs/5_eval_actual_vs_predicted.png)
+*Plots test set predictions against ground truth values alongside the ideal 1:1 reference line to assess prediction alignment.*
+
+---
+
+### 6. Residual Diagnostics
+![Residual Diagnostics](outputs/6_eval_residual_diagnostics.png)
+*Inspects prediction errors across predicted values to confirm random scatter around zero and check for heteroscedasticity.*
+
+---
+
+### 7. Training vs. Test Overfitting Check
+![Train vs Test Performance](outputs/7_eval_train_vs_test_bar.png)
+*Compares error and determination metrics across training and test splits to verify model generalization and check the bias-variance trade-off.*
 
 #### Interpretation of the Plot
 * **Parametric Best Fit Line ($y = b_0 + b_1 x$):** The green line represents the Ordinary Least Squares (OLS) fitted regression model between the primary predictor Benzene concentration (`C6H6(GT)`) and the target Carbon Monoxide concentration (`CO(GT)`).
