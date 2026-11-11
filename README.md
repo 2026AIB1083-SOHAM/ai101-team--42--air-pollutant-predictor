@@ -10,7 +10,7 @@ An educational machine-learning project that predicts air pollutant concentratio
 | Soham Gupta | 2026AIB1083 | Documentation lead | [@2026AIB1083-SOHAM](https://github.com/2026AIB1083-SOHAM) / [@sohamg9072](https://github.com/sohamg9072) |
 | Amarpreet Singh | 2026EEB1318 | Execution lead | [@Amarpreet2026](https://github.com/Amarpreet2026) |
 | Kedare Ashish Rajendra | 2026MCB1535 | PPT lead | [@2026mcb1535-star](https://github.com/2026mcb1535-star) |
-| Nihal Krishna Chetterbhaktula | 2026DAB1299 | Video lead | [@2026dab1299-ui](https://github.com/2026dab1299-ui) |
+| Nihal Krishna Chettebhaktula | 2026DAB1299 | Video lead | [@2026dab1299-ui](https://github.com/2026dab1299-ui) |
 
 
 *All four members contributed code (see commit history).*
