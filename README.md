@@ -191,7 +191,7 @@ The model was executed with the supplied dataset (`data/air_quality.csv`) and th
 - **Project Presentation (PPT):** [Click Here to View PPT](https://drive.google.com/file/d/1nAkrtIHxCBxYiw0xB-9NpIdtlfVoJB6w/view?usp=sharing)
 - **Project video:**
   [Click Here to View Video]
-  ( https://youtu.be/IL5ETSUc3uk )
+  (https://youtu.be/IL5ETSUc3uk)
 
 
 ## AI-Use Disclosure
